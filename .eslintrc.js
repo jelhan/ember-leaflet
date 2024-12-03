@@ -16,7 +16,9 @@ module.exports = {
   env: {
     browser: true
   },
-  rules: {},
+  rules: {
+    'ember/no-runloop': 'warn'
+  },
   overrides: [
     // node files
     {
@@ -44,7 +46,10 @@ module.exports = {
     {
       // test files
       files: ['tests/**/*-test.{js,ts}'],
-      extends: ['plugin:qunit/recommended']
+      extends: ['plugin:qunit/recommended'],
+      rules: {
+        'qunit/require-expect': 'warn'
+      }
     }
   ]
 };
