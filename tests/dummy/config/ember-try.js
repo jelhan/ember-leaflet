@@ -39,6 +39,7 @@ module.exports = async function () {
         name: 'ember-release',
         npm: {
           devDependencies: {
+            'ember-composability-tools': '^2.0.0',
             'ember-source': await getChannelURL('release')
           }
         }
@@ -47,6 +48,7 @@ module.exports = async function () {
         name: 'ember-beta',
         npm: {
           devDependencies: {
+            'ember-composability-tools': '^2.0.0',
             'ember-source': await getChannelURL('beta')
           }
         }
@@ -55,6 +57,7 @@ module.exports = async function () {
         name: 'ember-canary',
         npm: {
           devDependencies: {
+            'ember-composability-tools': '^2.0.0',
             'ember-source': await getChannelURL('canary')
           }
         }
