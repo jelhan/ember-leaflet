@@ -13,7 +13,7 @@ module.exports = async function () {
             'ember-source': '~3.28',
             'ember-data': '~3.28',
             leaflet: '~0.7.7',
-            'ember-leaflet-marker-cluster': '1.0.1'
+            'ember-leaflet-marker-cluster': '0.2.0'
           }
         }
       },
