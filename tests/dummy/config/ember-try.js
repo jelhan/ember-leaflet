@@ -12,7 +12,8 @@ module.exports = async function () {
           devDependencies: {
             'ember-source': '~3.28',
             'ember-data': '~3.28',
-            leaflet: '~0.7.7'
+            leaflet: '~0.7.7',
+            'ember-leaflet-marker-cluster': '1.0.1'
           }
         }
       },
@@ -28,6 +29,7 @@ module.exports = async function () {
         name: 'ember-lts-4.8',
         npm: {
           devDependencies: {
+            'ember-resolver': '^9.0.1',
             'ember-source': '~4.8.0'
           }
         }
