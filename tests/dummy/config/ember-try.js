@@ -12,6 +12,8 @@ module.exports = async function () {
           devDependencies: {
             'ember-source': '~3.28',
             'ember-data': '~3.28',
+            'ember-leaflet-marker-cluster': '0.2.0',
+            'ember-resolver': '^8.1.0',
             leaflet: '~0.7.7'
           }
         }
@@ -20,6 +22,7 @@ module.exports = async function () {
         name: 'ember-lts-4.4',
         npm: {
           devDependencies: {
+            'ember-resolver': '^8.1.0',
             'ember-source': '~4.4.0'
           }
         }
@@ -33,9 +36,26 @@ module.exports = async function () {
         }
       },
       {
+        name: 'ember-lts-4.12',
+        npm: {
+          devDependencies: {
+            'ember-source': '~4.12.0'
+          }
+        }
+      },
+      {
+        name: 'ember-lts-5.12',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.12.0'
+          }
+        }
+      },
+      {
         name: 'ember-release',
         npm: {
           devDependencies: {
+            'ember-composability-tools': '^2.0.0',
             'ember-source': await getChannelURL('release')
           }
         }
@@ -44,6 +64,7 @@ module.exports = async function () {
         name: 'ember-beta',
         npm: {
           devDependencies: {
+            'ember-composability-tools': '^2.0.0',
             'ember-source': await getChannelURL('beta')
           }
         }
@@ -52,6 +73,7 @@ module.exports = async function () {
         name: 'ember-canary',
         npm: {
           devDependencies: {
+            'ember-composability-tools': '^2.0.0',
             'ember-source': await getChannelURL('canary')
           }
         }

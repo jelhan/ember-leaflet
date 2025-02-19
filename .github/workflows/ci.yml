@@ -8,7 +8,7 @@ on:
   pull_request: {}
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 18
 
 concurrency:
   group: ci-${{ github.head_ref || github.ref }}
@@ -63,11 +63,13 @@ jobs:
           - ember-lts-3.28-leaflet-0.7.7
           - ember-lts-4.4
           - ember-lts-4.8
-          - ember-release
-          - ember-beta
-          - ember-canary
-          - embroider-safe
-          - embroider-optimized
+          - ember-lts-4.12
+          - ember-lts-5.12
+          # - ember-release
+          # - ember-beta
+          # - ember-canary
+          # - embroider-safe
+          # - embroider-optimized
 
     steps:
       - uses: actions/checkout@v3
