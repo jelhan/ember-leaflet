@@ -1,0 +1,11 @@
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  ember-modal-dialog: false
+  sharp: true
+
+overrides:
+  ember-cli-addon-docs>broccoli-plugin: '4.0.7'
+
+patchedDependencies:
+  ember-cli-addon-docs@5.2.0: patches/ember-cli-addon-docs@5.2.0.patch
