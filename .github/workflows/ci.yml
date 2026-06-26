@@ -7,48 +7,53 @@ on:
       - master
   pull_request: {}
 
-env:
-  NODE_VERSION: 14
-
 concurrency:
   group: ci-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
   test:
-    name: 'Tests'
+    name: "Tests"
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 11
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version: 22
+          cache: pnpm
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
       - name: Run Tests
-        run: npm run test:ember
+        run: pnpm test:ember
+
 
   floating:
-    name: 'Floating Dependencies'
+    name: "Floating Dependencies"
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 11
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version: 22
+          cache: pnpm
       - name: Install Dependencies
-        run: npm install --no-shrinkwrap
+        run: pnpm install --no-lockfile
       - name: Run Tests
-        run: npm run test:ember
+        run: pnpm test:ember
+
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -71,13 +76,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 11
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version: 22
+          cache: pnpm
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
 
@@ -100,14 +108,17 @@ jobs:
           # Copy the Git Auth from the local config
           git config --global "http.https://github.com/.extraheader" \
             "$(git config --local --get http.https://github.com/.extraheader)"
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 11
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version: 22
+          cache: pnpm
 
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Set ENV
         # 'master' or 'v1.2.3'
         # https://github.com/ember-learn/ember-cli-addon-docs/issues/454#issuecomment-584129324
@@ -115,4 +126,4 @@ jobs:
         run: echo "ADDON_DOCS_VERSION_PATH=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
       - name: Deploy
-        run: npm run-script deploy
+        run: pnpm deploy
