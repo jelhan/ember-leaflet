@@ -30,7 +30,10 @@
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.0.1",
     "@ember/test-helpers": "^2.9.3",
+    "@embroider/compat": "^2.1.1",
+    "@embroider/core": "^2.1.1",
     "@embroider/test-setup": "^3.0.3",
+    "@embroider/webpack": "^2.1.1",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^8.0.1",
     "ember-cli": "~4.12.1",
@@ -73,12 +76,10 @@
     "stylelint": "^15.4.0",
     "stylelint-config-standard-scss": "^8.0.0",
     "stylelint-prettier": "^3.0.0",
-    "webpack": "^5.0.0",
-    "@embroider/core": "^2.1.1",
-    "@embroider/webpack": "^2.1.1",
-    "@embroider/compat": "^2.1.1"
+    "webpack": "^5.0.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-class-static-block": "^8.0.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "broccoli-funnel": "^3.0.8",
