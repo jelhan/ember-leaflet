@@ -11,9 +11,6 @@ module.exports = function (defaults) {
       faviconsConfig: {
         path: '/ADDON_DOCS_ROOT_URL'
       }
-    },
-    babel: {
-      plugins: [require.resolve('@babel/plugin-transform-class-static-block')]
     }
   });
 

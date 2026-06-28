@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import hasEmberVersion from 'ember-test-helpers/has-ember-version';
 import MarkerLayerComponent from 'ember-leaflet/components/marker-layer';
 import locations from '../../helpers/locations';
 /* globals L */
@@ -132,18 +131,15 @@ module('Integration | Component | marker layer', function (hooks) {
     assert.false(marker._layer.dragging.enabled(), 'marker dragging is still disabled');
   });
 
-  if (hasEmberVersion(2, 3)) {
-    // do stuff in Ember 2.3+
-    test('marker works as contextual component', async function (assert) {
-      this.set('markerCenter', locations.nyc);
+  test('marker works as contextual component', async function (assert) {
+    this.set('markerCenter', locations.nyc);
 
-      await render(hbs`<LeafletMap @zoom={{this.zoom}} @center={{this.center}} as |layers|>
+    await render(hbs`<LeafletMap @zoom={{this.zoom}} @center={{this.center}} as |layers|>
   <layers.marker @location={{this.markerCenter}} />
 </LeafletMap>`);
 
-      assert.ok(marker._layer, 'marker was created');
-    });
-  }
+    assert.ok(marker._layer, 'marker was created');
+  });
 
   test('using icons from icon helper works', async function (assert) {
     this.set('markerCenter', locations.nyc);
