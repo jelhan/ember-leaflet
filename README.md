@@ -2,6 +2,12 @@
 
 Ember-Leaflet aims to make working with Leaflet layers in your Ember app as easy, declarative and composable as templates make working with DOM.
 
+## Compatibility
+
+- Ember.js v4.12 or above
+- Ember CLI v5.12 or above
+- Node.js v18 or above
+
 ## Installation
 
 Ember Leaflet works in Ember 3.16+ with no deprecations.
@@ -90,24 +96,6 @@ Think of your map as a set of layers inside a container. Your main container wil
 
 </LeafletMap>
 ```
-
-### Linting
-
-- `npm run lint:js`
-- `npm run lint:js -- --fix`
-
-### Running tests
-
-- `ember test` – Runs the test suite on the current Ember version
-- `ember test --server` – Runs the test suite in "watch mode"
-- `ember try:each` – Runs the test suite against multiple Ember versions
-
-### Running the dummy application
-
-- `ember serve`
-- Visit the dummy application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
 ## Contributing
 
