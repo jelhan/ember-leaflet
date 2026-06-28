@@ -2,12 +2,6 @@
 
 Ember-Leaflet aims to make working with Leaflet layers in your Ember app as easy, declarative and composable as templates make working with DOM.
 
-## Compatibility
-
-- Ember.js v4.12 or above
-- Ember CLI v5.12 or above
-- Node.js v18 or above
-
 ## Installation
 
 Ember Leaflet works in Ember 3.16+ with no deprecations.
