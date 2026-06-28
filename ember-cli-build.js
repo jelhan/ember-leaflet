@@ -11,7 +11,7 @@ module.exports = function (defaults) {
       faviconsConfig: {
         path: '/ADDON_DOCS_ROOT_URL'
       }
-    },
+    }
   });
 
   /*
