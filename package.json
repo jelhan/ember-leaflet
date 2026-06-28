@@ -122,6 +122,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
+    "paths": ["lib/bower-compat"],
     "demoURL": "https://miguelcobain.github.io/ember-leaflet/"
   },
   "husky": {
