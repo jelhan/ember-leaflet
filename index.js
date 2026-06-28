@@ -32,24 +32,7 @@ module.exports = {
     // Addon options from the apps ember-cli-build.js
     let options = app.options[this.name] || {};
 
-    // If the addon has the _findHost() method (in ember-cli >= 2.7.0), we'll just
-    // use that.
-    // if (typeof this._findHost === 'function') {
-    //   app = this._findHost();
-    // }
-
-    // Otherwise, we'll use this implementation borrowed from the _findHost()
-    // method in ember-cli.
-    // Keep iterating upward until we don't have a grandparent.
-    // Has to do this grandparent check because at some point we hit the project.
-    let current = this;
-    do {
-      if (current.lazyLoading === true || (current.lazyLoading && current.lazyLoading.enabled === true)) {
-        app = current;
-        break;
-      }
-      app = current.app || app;
-    } while (current.parent.parent && (current = current.parent));
+    app = this._findHost();
 
     if (!options.excludeJS) {
       app.import('vendor/leaflet/leaflet-src.js');
