@@ -1,8 +1,8 @@
 {{#each this.leafletDescriptorsProps as |prop|}}
-  {{did-update (fn this.updateOption prop) (get this.args prop)}}
+  {{did-update-helper (fn this.updateOption prop) (get this.args prop)}}
 {{/each}}
 
-{{did-update this.didChangeGeojson @geoJSON}}
+{{did-update-helper this.didChangeGeojson @geoJSON}}
 
 <@node @didInsertParent={{this.didInsertParent}} @willDestroyParent={{this.willDestroyParent}} as |Node|>
   {{#let (ember-leaflet-hash) as |components|}}

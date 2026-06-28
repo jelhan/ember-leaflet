@@ -45,7 +45,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.1(supports-color@8.1.1)
       ember-render-helpers:
-        specifier: ^0.2.0
+        specifier: ^0.2.1 || ^1.0.0
         version: 0.2.1
       fastboot-transform:
         specifier: ^0.1.3
