@@ -23,28 +23,11 @@ module.exports = function (defaults) {
 
   const { maybeEmbroider } = require('@embroider/test-setup');
 
-  // These rules tell embroider that `c.component` (a block param property from
-  // #each this.componentsToYield) is safe to use with the (component) helper.
-  // The value is always a component class imported in the corresponding JS file,
-  // never a string, so this is safe under staticComponents: true.
-  const componentTemplates = [
-    'components/base-layer.hbs',
-    'components/leaflet-map.hbs',
-    'components/geojson-layer.hbs'
-  ];
-  const packageRules = [
-    {
-      package: 'ember-leaflet',
-      addonTemplates: Object.fromEntries(componentTemplates.map((t) => [t, { invokes: { 'c.component': [] } }]))
-    }
-  ];
-
   return maybeEmbroider(app, {
     skipBabel: [
       {
         package: 'qunit'
       }
-    ],
-    packageRules
+    ]
   });
 };
