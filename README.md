@@ -4,7 +4,7 @@ Ember-Leaflet aims to make working with Leaflet layers in your Ember app as easy
 
 ## Installation
 
-Ember Leaflet works in Ember 3.16+ with no deprecations.
+Ember Leaflet requires Ember 3.28+.
 
 To install it run:
 
