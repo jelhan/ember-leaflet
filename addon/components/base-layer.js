@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import { scheduleOnce } from '@ember/runloop';
-import { classify } from '@ember/string';
+import { classify } from 'ember-leaflet/utils/classify';
 /* global L */
 
 const leaf = typeof L === 'undefined' ? {} : L;
