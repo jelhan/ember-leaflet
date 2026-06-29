@@ -697,17 +697,17 @@ export default class LeafletMap extends BaseLayer {
   componentsToYield = [
     ...this.componentsToYield,
     ...this.emberLeaflet.components,
-    { name: 'tile-layer', as: 'tile', component: TileLayer },
-    { name: 'wms-tile-layer', as: 'wms-tile', component: WmsTileLayer },
-    { name: 'marker-layer', as: 'marker', component: MarkerLayer },
-    { name: 'circle-layer', as: 'circle', component: CircleLayer },
-    { name: 'circle-marker-layer', as: 'circle-marker', component: CircleMarkerLayer },
-    { name: 'image-layer', as: 'image', component: ImageLayer },
-    { name: 'video-layer', as: 'video', component: VideoLayer },
-    { name: 'polyline-layer', as: 'polyline', component: PolylineLayer },
-    { name: 'polygon-layer', as: 'polygon', component: PolygonLayer },
-    { name: 'geojson-layer', as: 'geojson', component: GeojsonLayer },
-    { name: 'rectangle-layer', as: 'rectangle', component: RectangleLayer }
+    { as: 'tile', component: TileLayer },
+    { as: 'wms-tile', component: WmsTileLayer },
+    { as: 'marker', component: MarkerLayer },
+    { as: 'circle', component: CircleLayer },
+    { as: 'circle-marker', component: CircleMarkerLayer },
+    { as: 'image', component: ImageLayer },
+    { as: 'video', component: VideoLayer },
+    { as: 'polyline', component: PolylineLayer },
+    { as: 'polygon', component: PolygonLayer },
+    { as: 'geojson', component: GeojsonLayer },
+    { as: 'rectangle', component: RectangleLayer }
   ];
 
   // required to supress glimmer component error message for acessing bounds property

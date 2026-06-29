@@ -86,9 +86,10 @@ export default {
 
 The `registerComponent` method accepts two arguments:
 
-- the component name
-- an options object. Only the `as` option is supported at the moment. The `as` option is the name
-  under which the component will yielded as from the `<LeafletMap>` component.
+- the component name (used as the default value for `as` when `as` is not provided)
+- an options object with two properties:
+  - `component` (**required**): the component class to yield
+  - `as` (**required** unless the component name is used as-is): the key under which the component will be yielded from `<LeafletMap>`
 
 ### Yielding additional components from new components
 
@@ -100,15 +101,17 @@ use called `componentsToYield`. This should be an array of objects that describe
 want to yield. You should use it like:
 
 ```js
-// addon/components/market-cluster-layer.js
+// addon/components/marker-cluster-layer.js
+import MarkerLayer from 'ember-leaflet/components/marker-layer';
+
 componentsToYield = [
   ...this.componentsToYield,
-  { name: 'marker-layer', as: 'marker' }
+  { as: 'marker', component: MarkerLayer }
 ];
 ```
 
-- `name` is the name of the component itself
-- `as` is the key that you want to put it under in the yielded hash (the key will default to the `name` value if an empty `as` is provided)
+- `as` is the key under which the component will be yielded in the hash
+- `component` (**required**) is the component class to yield
 
 `BaseLayer`'s template will make sure to yield these components correctly for you.
 
