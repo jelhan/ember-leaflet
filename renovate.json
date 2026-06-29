@@ -2,5 +2,29 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": [
+        "@ember/test-helpers",
+        "ember-qunit"
+      ],
+      "matchPackagePatterns": [
+        "^eslint",
+        "^prettier",
+        "^stylelint",
+        "^qunit",
+        "^ember-template-lint"
+      ],
+      "automerge": true
+    }
   ]
 }
