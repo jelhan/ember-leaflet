@@ -211,10 +211,12 @@ module('Integration | Component | leaflet map', function (hooks) {
     this.emberLeaflet = this.owner.lookup('service:ember-leaflet');
 
     [1, 2, 3].forEach((ix) => {
-      this.owner.register(`component:leaflet-component-${ix}`, class extends LeafletMapComponent {});
+      const componentClass = class extends LeafletMapComponent {};
+      this.owner.register(`component:leaflet-component-${ix}`, componentClass);
 
       this.emberLeaflet.registerComponent(`leaflet-component-${ix}`, {
-        as: `component-${ix}`
+        as: `component-${ix}`,
+        component: componentClass
       });
     });
 
