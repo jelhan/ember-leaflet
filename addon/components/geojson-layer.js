@@ -103,8 +103,8 @@ export default class GeojsonLayer extends BaseLayer {
 
   componentsToYield = [
     ...this.componentsToYield,
-    { name: 'popup-layer', as: 'popup', component: PopupLayer },
-    { name: 'tooltip-layer', as: 'tooltip', component: TooltipLayer }
+    { as: 'popup', component: PopupLayer },
+    { as: 'tooltip', component: TooltipLayer }
   ];
 
   @action
